@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ============================================================
+       META TAGS - Required for every HTML5 page
+       charset: tells browser to use UTF-8 (supports all characters)
+       viewport: makes the page responsive on mobile devices
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title - shows in browser tab and Google search results -->
+  <title>BrewNairobi | Specialty Coffee in the Heart of the City</title>
+
+  <!-- SEO meta tags - help search engines understand your page -->
+  <meta name="description" content="BrewNairobi is Nairobi's premier specialty coffee shop. Fresh single-origin beans, cozy workspace, and the best flat white in town." />
+  <meta name="author" content="BrewNairobi" />
+
+  <!-- Open Graph tags - control how your page looks when shared on WhatsApp, Twitter, etc. -->
+  <meta property="og:title" content="BrewNairobi | Specialty Coffee" />
+  <meta property="og:description" content="Nairobi's favourite specialty coffee experience." />
+  <meta property="og:type" content="website" />
+
+  <!-- ============================================================
+       BOOTSTRAP 5 CSS - Loaded from CDN (no installation needed)
+       Bootstrap gives us: grid system, navbar, cards, buttons, etc.
+  ============================================================ -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons - icon library that pairs with Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts - Playfair Display for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Our custom CSS - always load AFTER Bootstrap so we can override it -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       - data-bs-theme="dark" makes text white (for dark backgrounds)
+       - navbar-expand-lg: collapses into hamburger on screens < lg (992px)
+       - sticky-top: navbar stays visible as you scroll
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+
+      <!-- Brand / Logo - clicking this goes back to home page -->
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+      </a>
+
+      <!-- Hamburger button - only visible on mobile (< 992px) -->
+      <!-- data-bs-target="#navbarNav" links this button to the menu below -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- The actual navigation links - hidden on mobile until hamburger clicked -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- ms-auto pushes the links to the RIGHT side of the navbar -->
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <!-- nav-item = list item wrapper | nav-link = the clickable link -->
+          <!-- "active" class + aria-current="page" marks the CURRENT page -->
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/testimonials.html">Reviews</a>
+          </li>
+          <!-- CTA button - stands out from the other links -->
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-brand" href="pages/contact.html">Visit Us</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- END NAVBAR -->
+
+
+  <!-- ============================================================
+       HERO SECTION
+       The first thing visitors see - must be bold and clear
+       We use Bootstrap's grid: container > row > col
+  ============================================================ -->
+  <section class="hero-section" aria-label="Hero">
+    <div class="container">
+      <!-- Bootstrap grid: row contains columns -->
+      <!-- align-items-center: vertically centres both columns -->
+      <div class="row align-items-center g-5">
+
+        <!-- Text column: col-lg-6 = takes half width on large screens, full width on mobile -->
+        <div class="col-lg-6">
+          <!-- Small label above the headline - called an "eyebrow" -->
+          <span class="hero-eyebrow">Specialty Coffee · Nairobi CBD</span>
+
+          <!-- Main headline - uses our serif display font -->
+          <h1 class="hero-headline">
+            Where Every Cup<br />
+            Tells a <span class="text-brand">Story</span>
+          </h1>
+
+          <!-- Supporting description - concise, not a wall of text -->
+          <p class="hero-description">
+            Single-origin beans sourced directly from Kenyan highland farms,
+            roasted fresh every week, and brewed by certified baristas who
+            genuinely love what they do.
+          </p>
+
+          <!-- Two CTA buttons side-by-side -->
+          <!-- flex-wrap: they stack vertically on very small screens -->
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="pages/menu.html" class="btn btn-brand btn-lg">
+              <i class="bi bi-journal-text me-2" aria-hidden="true"></i>See Our Menu
+            </a>
+            <a href="pages/contact.html" class="btn btn-outline-brand btn-lg">
+              <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Find Us
+            </a>
+          </div>
+
+          <!-- Trust badges - small social-proof elements below the CTAs -->
+          <div class="hero-badges mt-4">
+            <span class="badge-pill"><i class="bi bi-star-fill" aria-hidden="true"></i> 4.9 on Google</span>
+            <span class="badge-pill"><i class="bi bi-clock" aria-hidden="true"></i> Open 7am – 9pm</span>
+            <span class="badge-pill"><i class="bi bi-wifi" aria-hidden="true"></i> Free Wi-Fi</span>
+          </div>
+        </div>
+
+        <!-- Image column - shows a visual to complement the text -->
+        <div class="col-lg-6">
+          <div class="hero-img-wrap">
+            <!-- object-fit:cover ensures the image fills its box without distortion -->
+            <!-- alt text describes the image for screen readers and if image fails to load -->
+            <img
+              src="assets/images/hero-coffee.jpg"
+              alt="Barista pouring latte art into a white ceramic cup at BrewNairobi"
+              class="img-fluid hero-img"
+            />
+            <!-- Floating stat card overlaid on the image -->
+            <div class="hero-float-card">
+              <span class="float-number">12+</span>
+              <span class="float-label">Single-origin<br />origins stocked</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END HERO -->
+
+
+  <!-- ============================================================
+       FEATURES SECTION
+       Shows key selling points in a 3-column grid
+       Using Bootstrap's card component inside a responsive grid
+  ============================================================ -->
+  <section class="features-section" aria-label="Key features">
+    <div class="container">
+
+      <!-- Section header - centered above the cards -->
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Why BrewNairobi</span>
+        <h2 class="section-title">More than just a coffee shop</h2>
+      </div>
+
+      <!-- row-cols-* controls how many cards per row at each screen size -->
+      <!-- row-cols-1: 1 card per row on mobile -->
+      <!-- row-cols-md-2: 2 cards per row on tablet -->
+      <!-- row-cols-lg-3: 3 cards per row on desktop -->
+      <!-- g-4: gap of 1.5rem between cards -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- Feature Card 1 -->
+        <div class="col">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="bi bi-patch-check-fill feature-icon" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-title">Direct-Trade Beans</h3>
+            <p class="feature-desc">
+              We partner directly with smallholder farms in Nyeri, Kirinyaga, and
+              Murang'a — paying above fair-trade prices so farmers thrive too.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="col">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="bi bi-laptop feature-icon" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-title">Work-Friendly Space</h3>
+            <p class="feature-desc">
+              Fast fibre Wi-Fi, plenty of power outlets, private meeting rooms,
+              and background music kept low — perfect for freelancers and remote teams.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="col">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i class="bi bi-mortarboard-fill feature-icon" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-title">Barista Training</h3>
+            <p class="feature-desc">
+              Weekend cupping sessions and beginner espresso classes open to the
+              public. Learn to brew a proper V60 or master the art of latte art.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- END feature cards row -->
+
+    </div>
+  </section>
+  <!-- END FEATURES -->
+
+
+  <!-- ============================================================
+       FOOTER
+       Shared across ALL pages - same markup copy-pasted
+       aria-label helps screen readers identify this landmark
+  ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Footer column 1: Brand + tagline -->
+        <div class="col-lg-4">
+          <a class="footer-brand" href="index.html">
+            <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+          </a>
+          <p class="footer-tagline">
+            Specialty coffee served with intention, every day since 2019.
+          </p>
+          <!-- Social media icons -->
+          <div class="footer-socials">
+            <a href="#" aria-label="BrewNairobi on Instagram" class="social-link">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link">
+              <i class="bi bi-twitter-x" aria-hidden="true"></i>
+            </a>
+            <a href="#" aria-label="BrewNairobi on Facebook" class="social-link">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer column 2: Quick links -->
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/menu.html">Menu</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer column 3: More links -->
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="pages/blog.html">Blog</a></li>
+            <li><a href="pages/faq.html">FAQ</a></li>
+            <li><a href="pages/testimonials.html">Reviews</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer column 4: Opening hours -->
+        <div class="col-lg-2">
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-links">
+            <li>Mon – Fri: 7am – 9pm</li>
+            <li>Saturday: 8am – 9pm</li>
+            <li>Sunday: 9am – 6pm</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar: copyright -->
+      <div class="footer-bottom">
+        <p class="mb-0">
+          &copy; <span id="year"></span> BrewNairobi. All rights reserved.
+          <!-- JS in main.js will insert the current year automatically -->
+        </p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ============================================================
+       BOOTSTRAP JS BUNDLE
+       Must be loaded at the BOTTOM of body (after all HTML)
+       "bundle" version includes Popper.js (needed for dropdowns, tooltips)
+  ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Our custom JS - also at the bottom, after Bootstrap -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
