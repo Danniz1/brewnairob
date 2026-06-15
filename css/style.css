@@ -1,0 +1,548 @@
+/* ================================================================
+   BREWNAIROB I - style.css
+   Order of sections:
+   1. CSS Custom Properties (variables)  - our design tokens
+   2. Reset & Base                       - sensible defaults
+   3. Typography                         - headings, body text
+   4. Components: Navbar
+   5. Components: Hero Section
+   6. Components: Features Section
+   7. Components: Footer
+   8. Utilities                          - reusable helper classes
+   9. Dark Mode overrides
+   10. Media Queries                     - responsive adjustments
+================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   Define once here, use everywhere. To change the brand colour,
+   you only need to edit ONE line.
+---------------------------------------------------------------- */
+:root {
+  /* Brand colours */
+  --brand-primary: #6B3F1E;        /* Deep coffee brown - main brand colour */
+  --brand-primary-hover: #7f4e28;  /* Lighter brown for hover states */
+  --brand-accent: #C8882A;         /* Golden amber - secondary accent */
+  --brand-light: #FDF6EE;          /* Warm cream - used for backgrounds */
+
+  /* Neutral colours */
+  --text-dark: #1A1A1A;            /* Near-black for headings */
+  --text-body: #4A4A4A;            /* Dark grey for body text */
+  --text-muted: #8A8A8A;           /* Light grey for captions, labels */
+  --border-colour: #E8DDD3;        /* Warm grey border */
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;   /* Headings */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif; /* Body */
+
+  /* Spacing scale */
+  --section-gap: 5rem;     /* Space between major sections */
+  --card-radius: 14px;     /* Rounded corners on cards */
+  --btn-radius: 50px;      /* Pill-shaped buttons */
+
+  /* Transitions */
+  --transition: 0.25s ease;
+}
+
+
+/* ----------------------------------------------------------------
+   2. RESET & BASE
+   Remove browser inconsistencies and set sensible defaults
+---------------------------------------------------------------- */
+
+/* box-sizing: border-box means padding/border are INCLUDED in width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling when clicking anchor links (e.g. #section-id) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background-color: var(--white);
+  line-height: 1.7;          /* Comfortable reading line height */
+  -webkit-font-smoothing: antialiased; /* Crisper text on Mac */
+}
+
+/* Remove default list bullets in nav and footer */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Images should never overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove underlines from links by default, re-add where needed */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ----------------------------------------------------------------
+   3. TYPOGRAPHY
+   Consistent heading sizes across all pages
+---------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+
+/* ----------------------------------------------------------------
+   4. COMPONENT: NAVBAR
+   Styles for the top navigation bar
+---------------------------------------------------------------- */
+#mainNav {
+  background-color: var(--brand-primary); /* Dark brown background */
+  padding: 0.85rem 0;
+  /* Adds a subtle shadow below the sticky navbar */
+  box-shadow: 0 2px 12px rgba(107, 63, 30, 0.18);
+}
+
+/* Brand (logo text) in the navbar */
+.navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--white) !important; /* Override Bootstrap's colour */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Individual nav links */
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.82) !important; /* Slightly translucent white */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 6px;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+/* Hover and active states for nav links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--white) !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Override Bootstrap's hamburger icon colour */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255%2c255%2c255%2c0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ----------------------------------------------------------------
+   SHARED BUTTON STYLES
+   Our custom brand buttons (not Bootstrap defaults)
+   .btn-brand  = solid filled button (primary CTA)
+   .btn-outline-brand = outlined button (secondary CTA)
+---------------------------------------------------------------- */
+.btn-brand {
+  background-color: var(--brand-accent);   /* Golden amber fill */
+  border: 2px solid var(--brand-accent);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--btn-radius);
+  padding: 0.55rem 1.4rem;
+  transition: background-color var(--transition), transform var(--transition);
+  letter-spacing: 0.01em;
+}
+.btn-brand:hover {
+  background-color: #b07520;  /* Darker amber on hover */
+  border-color: #b07520;
+  color: var(--white);
+  transform: translateY(-1px); /* Subtle lift effect */
+}
+
+.btn-outline-brand {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--btn-radius);
+  padding: 0.55rem 1.4rem;
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+.btn-outline-brand:hover {
+  background-color: var(--white);
+  color: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
+/* Branded text colour utility */
+.text-brand {
+  color: var(--brand-accent);
+}
+
+
+/* ----------------------------------------------------------------
+   5. COMPONENT: HERO SECTION
+   The large banner at the top of the home page
+---------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
+  color: var(--white);
+  padding: 5.5rem 0 4.5rem; /* More top padding to clear the sticky navbar */
+  overflow: hidden;           /* Prevents float card from creating scroll */
+}
+
+/* Small label above the hero headline */
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(200, 136, 42, 0.4);
+  padding: 0.25rem 0.8rem;
+  border-radius: 50px;
+}
+
+/* Main H1 headline */
+.hero-headline {
+  font-size: clamp(2.4rem, 5vw, 3.6rem); /* Fluid: shrinks on small screens */
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+/* Description paragraph */
+.hero-description {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+/* Small pill badges below the CTA buttons */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+/* Image wrapper - position:relative lets us position the float card */
+.hero-img-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden; /* Clips the image to the rounded corners */
+}
+.hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;  /* Fills the box, crops if needed, never distorts */
+  border-radius: 20px;
+  display: block;
+}
+
+/* Floating stat card that overlays the hero image */
+.hero-float-card {
+  position: absolute;  /* Positioned relative to .hero-img-wrap */
+  bottom: 1.5rem;
+  left: -1.5rem;       /* Slightly outside the image */
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.float-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  line-height: 1;
+}
+.float-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 0.25rem;
+}
+
+
+/* ----------------------------------------------------------------
+   6. COMPONENT: FEATURES SECTION
+   The 3-column "why us" cards below the hero
+---------------------------------------------------------------- */
+.features-section {
+  padding: var(--section-gap) 0;
+  background-color: var(--brand-light); /* Warm cream background */
+}
+
+/* Section header shared across all sections */
+.section-header {
+  margin-bottom: 3rem;
+}
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--text-dark);
+}
+
+/* Individual feature card */
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 2rem 1.75rem;
+  height: 100%;               /* Equal height within Bootstrap row */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+/* Lift the card slightly on hover */
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+
+/* Icon circle inside each card */
+.feature-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: var(--brand-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.feature-icon {
+  font-size: 1.4rem;
+  color: var(--brand-primary);
+}
+
+.feature-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+}
+.feature-desc {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   7. COMPONENT: FOOTER
+   Shared footer used across all pages
+---------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--text-dark);  /* Near-black background */
+  color: rgba(255, 255, 255, 0.72);
+  padding: 4rem 0 0;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--white);
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 260px;
+}
+
+/* Social media icon links */
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+.social-link:hover {
+  background: var(--brand-accent);
+  color: var(--white);
+}
+
+/* Column headings inside the footer */
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+/* Footer link lists */
+.footer-links li {
+  margin-bottom: 0.55rem;
+  font-size: 0.875rem;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+.footer-links a:hover {
+  color: var(--brand-accent);
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.25rem 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+}
+
+
+/* ----------------------------------------------------------------
+   8. UTILITIES
+   Small reusable classes used throughout
+---------------------------------------------------------------- */
+
+/* Visually hide something but keep it readable by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   9. DARK MODE
+   Automatically applied when the user's OS is in dark mode
+   (JS will also add .dark-mode class to <body> via toggle button)
+---------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #1A1A1A;
+    --brand-light: #241209;
+    --text-dark: #F5EFE8;
+    --text-body: #C8BFB6;
+    --text-muted: #8A8078;
+    --border-colour: #3A2A1C;
+  }
+  .hero-float-card {
+    background: #2C1A0A;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+}
+
+/* Class-based dark mode (toggled by JS) */
+body.dark-mode {
+  --white: #1A1A1A;
+  --brand-light: #241209;
+  --text-dark: #F5EFE8;
+  --text-body: #C8BFB6;
+  --border-colour: #3A2A1C;
+  background-color: #141414;
+  color: var(--text-body);
+}
+body.dark-mode .site-footer {
+  background-color: #0D0D0D;
+}
+
+
+/* ----------------------------------------------------------------
+   10. MEDIA QUERIES
+   Fine-tune layout for specific screen sizes.
+   Bootstrap handles most responsiveness — these are our additions.
+---------------------------------------------------------------- */
+
+/* Tablet and below (< 992px) */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+  }
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-badges {
+    justify-content: center;
+  }
+  .d-flex.flex-wrap.gap-3.mt-4 {
+    justify-content: center;
+  }
+  /* Float card sits inside the image on mobile (not outside) */
+  .hero-float-card {
+    left: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Mobile (< 576px) */
+@media (max-width: 575.98px) {
+  .hero-img {
+    height: 280px; /* Shorter image on small phones */
+  }
+  .feature-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
