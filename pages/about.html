@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | BrewNairobi</title>
+  <meta name="description" content="Learn the story behind BrewNairobi — how we started, our team, and our commitment to Kenyan specialty coffee." />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Our CSS - note the "../" because this file is inside /pages/ -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR - identical on every page
+       Only difference: update the "active" link and "../" paths
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <!-- "active" is on About because this IS the about page -->
+          <li class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+          <li class="nav-item ms-lg-1">
+            <button id="darkModeToggle" class="btn btn-dark-toggle" aria-label="Switch to dark mode" title="Toggle dark mode">
+              <i class="bi bi-moon-fill" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-1">
+            <a class="btn btn-brand" href="contact.html">Visit Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       PAGE HERO (inner page banner - smaller than home hero)
+       Used on all inner pages for consistency
+  ============================================================ -->
+  <section class="page-hero" aria-label="Page header">
+    <div class="container text-center">
+      <!-- Breadcrumb: shows the user where they are in the site -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol>
+      </nav>
+      <h1 class="page-hero-title">Our Story</h1>
+      <p class="page-hero-subtitle">From a small cart in Westlands to Nairobi's most-loved specialty café</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STORY SECTION
+       Two-column layout: text on left, image on right
+  ============================================================ -->
+  <section class="story-section" aria-label="Our story">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Text column -->
+        <div class="col-lg-6">
+          <span class="section-eyebrow">How it started</span>
+          <h2 class="section-title">A cup that changed everything</h2>
+          <p class="story-text">
+            In 2019, our founder <strong>Amara Wanjiku</strong> returned from a coffee tasting
+            trip in Yirgacheffe, Ethiopia with one big question: why were Kenyan
+            highland beans — some of the finest in the world — being exported while
+            Nairobi's cafés served mediocre commodity blends?
+          </p>
+          <p class="story-text">
+            She started BrewNairobi from a small push-cart outside the Westlands
+            Sarit Centre with a hand-grinder, a V60, and a single 5kg bag of Nyeri
+            AA. The queue stretched to the car park by week two.
+          </p>
+          <p class="story-text">
+            Today we occupy a 120-seat space in Kilimani, source directly from
+            eleven farms across Nyeri, Kirinyaga, and Murang'a, roast every batch
+            in-house on a Giesen W15, and train the next generation of Kenyan baristas.
+          </p>
+
+          <!-- Key stats in a small grid -->
+          <div class="story-stats">
+            <div class="stat-item">
+              <span class="stat-number">2019</span>
+              <span class="stat-label">Founded</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">11</span>
+              <span class="stat-label">Farm partners</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">4.9★</span>
+              <span class="stat-label">Google rating</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">800+</span>
+              <span class="stat-label">Cups daily</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image column -->
+        <div class="col-lg-6">
+          <div class="about-img-stack">
+            <!-- Main image -->
+            <img
+              src="../assets/images/about-main.jpg"
+              alt="BrewNairobi interior — warm wooden tables and exposed brick walls"
+              class="about-img-main img-fluid"
+            />
+            <!-- Small overlapping image for visual depth -->
+            <img
+              src="../assets/images/about-small.jpg"
+              alt="Amara Wanjiku, founder of BrewNairobi, inspecting green coffee beans"
+              class="about-img-small img-fluid"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       VALUES SECTION
+       3-column grid of core values
+  ============================================================ -->
+  <section class="values-section" aria-label="Our values">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">What drives us</span>
+        <h2 class="section-title">Our core values</h2>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+          <div class="value-card">
+            <i class="bi bi-heart-fill value-icon" aria-hidden="true"></i>
+            <h3 class="value-title">Farmer first</h3>
+            <p class="value-desc">
+              We pay a minimum of 30% above the Nairobi Coffee Exchange floor price
+              to every farm we partner with. Their livelihood is our priority.
+            </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="value-card">
+            <i class="bi bi-award-fill value-icon" aria-hidden="true"></i>
+            <h3 class="value-title">Relentless quality</h3>
+            <p class="value-desc">
+              Every lot is cupped before purchase. We reject anything scoring below
+              84 on the SCA scale — even if it means a shorter menu.
+            </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="value-card">
+            <i class="bi bi-people-fill value-icon" aria-hidden="true"></i>
+            <h3 class="value-title">Community space</h3>
+            <p class="value-desc">
+              BrewNairobi hosts free weekend cuppings, barista workshops for youth,
+              and monthly "creative mornings" open to anyone with an idea.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TEAM SECTION
+       Cards for each team member
+  ============================================================ -->
+  <section class="team-section" aria-label="Our team">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">The people behind your cup</span>
+        <h2 class="section-title">Meet the team</h2>
+      </div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+        <!-- Team Member 1 -->
+        <div class="col">
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="../assets/images/team-amara.jpg" alt="Amara Wanjiku" class="team-img" />
+            </div>
+            <div class="team-info">
+              <h4 class="team-name">Amara Wanjiku</h4>
+              <span class="team-role">Founder & Head Roaster</span>
+              <p class="team-bio">Q-Grader certified. SCA World Brewers Cup competitor 2023.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col">
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="../assets/images/team-brian.jpg" alt="Brian Otieno" class="team-img" />
+            </div>
+            <div class="team-info">
+              <h4 class="team-name">Brian Otieno</h4>
+              <span class="team-role">Head Barista</span>
+              <p class="team-bio">Trained in Melbourne. Specialises in alternative brew methods and latte art.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col">
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="../assets/images/team-grace.jpg" alt="Grace Muthoni" class="team-img" />
+            </div>
+            <div class="team-info">
+              <h4 class="team-name">Grace Muthoni</h4>
+              <span class="team-role">Farm Partnerships</span>
+              <p class="team-bio">Manages relationships with 11 partner farms across the Central Highlands.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="col">
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="../assets/images/team-james.jpg" alt="James Kariuki" class="team-img" />
+            </div>
+            <div class="team-info">
+              <h4 class="team-name">James Kariuki</h4>
+              <span class="team-role">Pastry Chef</span>
+              <p class="team-bio">Creates all in-house pastries from local ingredients. Mandazi + espresso is his signature.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA SECTION
+       Pushes visitors to another page (contact or menu)
+  ============================================================ -->
+  <section class="cta-section" aria-label="Call to action">
+    <div class="container text-center">
+      <h2 class="cta-title">Come experience it yourself</h2>
+      <p class="cta-desc">
+        We're open 7 days a week in Kilimani, Nairobi. No reservations needed —
+        just walk in and tell us what you're in the mood for.
+      </p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="menu.html" class="btn btn-brand btn-lg">
+          <i class="bi bi-journal-text me-2" aria-hidden="true"></i>View Our Menu
+        </a>
+        <a href="contact.html" class="btn btn-outline-dark btn-lg">
+          <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER - identical on every page
+  ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="../index.html">
+            <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+          </a>
+          <p class="footer-tagline">Specialty coffee served with intention, every day since 2019.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="BrewNairobi on Instagram" class="social-link"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Facebook" class="social-link"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-links">
+            <li>Mon – Fri: 7am – 9pm</li>
+            <li>Saturday: 8am – 9pm</li>
+            <li>Sunday: 9am – 6pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span id="year"></span> BrewNairobi. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Our JS - note "../" path -->
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
