@@ -1,4 +1,4 @@
-# BrewNairobi ☕
+# BrewNairobi 
 
 A fully responsive, multi-page web application for **BrewNairobi** — a specialty coffee shop based in Nairobi, Kenya.
 
@@ -69,17 +69,7 @@ brewnairob/
 
 ---
 
-## Live Preview
 
-🔗 [View Live Site](https://YOUR-USERNAME.github.io/brewnairob)
-
----
-
-## Version Control
-
-- First commit: **15 June 2026**
-- Final commit: **28 June 2026**
-- Total commits: **43+**
 
 ---
 
