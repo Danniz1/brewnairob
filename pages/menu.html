@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Menu | BrewNairobi</title>
+  <meta name="description" content="Explore BrewNairobi's full menu — single-origin espresso drinks, pour-overs, teas, and freshly baked pastries." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="menu.html" aria-current="page">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+          <li class="nav-item ms-lg-1">
+            <button id="darkModeToggle" class="btn btn-dark-toggle" aria-label="Switch to dark mode" title="Toggle dark mode">
+              <i class="bi bi-moon-fill" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-1">
+            <a class="btn btn-brand" href="contact.html">Visit Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Page header">
+    <div class="container text-center">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Menu</li>
+        </ol>
+      </nav>
+      <h1 class="page-hero-title">Our Menu</h1>
+      <p class="page-hero-subtitle">Freshly brewed, honestly sourced — updated weekly based on what's in season</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MENU FILTER + CARDS SECTION
+       JS feature: clicking filter buttons shows/hides menu cards
+       by matching the data-category attribute
+  ============================================================ -->
+  <section class="menu-section" aria-label="Menu items">
+    <div class="container">
+
+      <!-- Filter buttons row -->
+      <!-- Each button has data-filter matching a card's data-category -->
+      <div class="menu-filters" role="group" aria-label="Filter menu by category">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="espresso">Espresso</button>
+        <button class="filter-btn" data-filter="filter-coffee">Filter Coffee</button>
+        <button class="filter-btn" data-filter="cold">Cold Drinks</button>
+        <button class="filter-btn" data-filter="tea">Teas</button>
+        <button class="filter-btn" data-filter="food">Food & Pastries</button>
+      </div>
+
+      <!-- Menu cards grid -->
+      <!-- Each card has data-category so JS can show/hide it -->
+      <div class="row g-4" id="menuGrid">
+
+        <!-- ---- ESPRESSO DRINKS ---- -->
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="espresso">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <!-- data-bs-toggle="tooltip" activates Bootstrap tooltip on hover -->
+              <h3 class="menu-item-name"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Single shot: 30ml of espresso pulled at 9 bar pressure">
+                Espresso
+              </h3>
+              <span class="menu-item-price">KSh 200</span>
+            </div>
+            <p class="menu-item-desc">
+              Single or double shot. Our house blend is a 70/30 Nyeri AA and
+              Kirinyaga PB — sweet, syrupy, with a dark chocolate finish.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge espresso">Espresso</span>
+              <span class="menu-badge-info"><i class="bi bi-cup-fill" aria-hidden="true"></i> 30ml</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="espresso">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Espresso + steamed whole milk + thick microfoam layer">
+                Flat White
+              </h3>
+              <span class="menu-item-price">KSh 380</span>
+            </div>
+            <p class="menu-item-desc">
+              Double ristretto pulled shorter and more concentrated, topped with
+              velvety steamed whole milk. Our best-seller — over 200 served daily.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge espresso">Espresso</span>
+              <span class="menu-badge-info"><i class="bi bi-cup-fill" aria-hidden="true"></i> 160ml</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="espresso">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Espresso + steamed milk with a light foam top and latte art">
+                Latte
+              </h3>
+              <span class="menu-item-price">KSh 420</span>
+            </div>
+            <p class="menu-item-desc">
+              Double espresso with 200ml of steamed milk and a thin layer of
+              microfoam. Our baristas pull a different latte art pattern every day.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge espresso">Espresso</span>
+              <span class="menu-badge-info"><i class="bi bi-cup-fill" aria-hidden="true"></i> 240ml</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="espresso">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Equal parts espresso, steamed milk and thick foam">
+                Cappuccino
+              </h3>
+              <span class="menu-item-price">KSh 400</span>
+            </div>
+            <p class="menu-item-desc">
+              Classic Italian-style — double espresso, 60ml steamed milk,
+              60ml thick dry foam. Finished with a dusting of single-origin cocoa.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge espresso">Espresso</span>
+              <span class="menu-badge-info"><i class="bi bi-cup-fill" aria-hidden="true"></i> 180ml</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="espresso">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Cortado</h3>
+              <span class="menu-item-price">KSh 350</span>
+            </div>
+            <p class="menu-item-desc">
+              Equal parts espresso and warm milk to cut the acidity. Served in
+              a small glass — simple, honest, and dangerously easy to drink twice.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge espresso">Espresso</span>
+              <span class="menu-badge-info"><i class="bi bi-cup-fill" aria-hidden="true"></i> 80ml</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- FILTER COFFEE ---- -->
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="filter-coffee">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">V60 Pour-Over</h3>
+              <span class="menu-item-price">KSh 480</span>
+            </div>
+            <p class="menu-item-desc">
+              Brewed to order in 4 minutes. Ask your barista what's on the
+              pour-over bar today — we rotate single origins weekly. Tasting
+              notes posted on the chalk board.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge filter">Filter</span>
+              <span class="menu-badge-info"><i class="bi bi-clock" aria-hidden="true"></i> 4 min brew</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="filter-coffee">
+          <div class="menu-card menu-card--featured">
+            <!-- Featured card gets a special highlight style -->
+            <div class="menu-featured-tag">
+              <i class="bi bi-star-fill" aria-hidden="true"></i> Staff Pick
+            </div>
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Aeropress</h3>
+              <span class="menu-item-price">KSh 450</span>
+            </div>
+            <p class="menu-item-desc">
+              Full immersion brewing creates a clean, full-bodied cup with
+              almost zero bitterness. Perfect for those who find espresso too
+              intense. Uses our Murang'a natural process lot.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge filter">Filter</span>
+              <span class="menu-badge-info"><i class="bi bi-award" aria-hidden="true"></i> Recommended</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="filter-coffee">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Cold Brew (12hr)</h3>
+              <span class="menu-item-price">KSh 520</span>
+            </div>
+            <p class="menu-item-desc">
+              Steeped for 12 hours in cold water, never heated. The result is
+              smooth, low-acidity concentrate served over ice. Available from
+              10am daily while stocks last.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge filter">Filter</span>
+              <span class="menu-badge-info"><i class="bi bi-snow" aria-hidden="true"></i> Served cold</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- COLD DRINKS ---- -->
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Iced Latte</h3>
+              <span class="menu-item-price">KSh 460</span>
+            </div>
+            <p class="menu-item-desc">
+              Double espresso poured over ice and topped with cold whole milk.
+              Add vanilla or hazelnut syrup for KSh 50. No watered-down ice —
+              we use coffee ice cubes.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge cold">Cold</span>
+              <span class="menu-badge-info"><i class="bi bi-snow" aria-hidden="true"></i> Iced</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Nitro Cold Brew</h3>
+              <span class="menu-item-price">KSh 580</span>
+            </div>
+            <p class="menu-item-desc">
+              Cold brew infused with nitrogen gas on tap. Creamy, Guinness-like
+              head, ultra-smooth finish. No milk needed. Served in a branded
+              BrewNairobi glass — keep it when you're done.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge cold">Cold</span>
+              <span class="menu-badge-info"><i class="bi bi-stars" aria-hidden="true"></i> Signature</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- TEAS ---- -->
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="tea">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Masala Chai Latte</h3>
+              <span class="menu-item-price">KSh 380</span>
+            </div>
+            <p class="menu-item-desc">
+              House-made masala spice blend (cardamom, ginger, cinnamon, cloves)
+              simmered with Kenyan CTC tea and steamed milk. Sweet, warming,
+              and completely homemade — no syrups.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge tea">Tea</span>
+              <span class="menu-badge-info"><i class="bi bi-fire" aria-hidden="true"></i> House blend</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="tea">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Kenyan Purple Tea</h3>
+              <span class="menu-item-price">KSh 320</span>
+            </div>
+            <p class="menu-item-desc">
+              Sourced from the KARI Purple Tea variety grown in Nandi Hills —
+              naturally purple-hued, high in anthocyanins, mildly sweet with
+              a hint of honey. A true Kenyan original.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge tea">Tea</span>
+              <span class="menu-badge-info"><i class="bi bi-geo-alt" aria-hidden="true"></i> Nandi Hills</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- FOOD & PASTRIES ---- -->
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="food">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Espresso Mandazi</h3>
+              <span class="menu-item-price">KSh 180</span>
+            </div>
+            <p class="menu-item-desc">
+              Our signature item — Chef James's traditional East African mandazi
+              dough infused with a shot of espresso and finished with a dusting
+              of cocoa powder. Pairs perfectly with the flat white.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge food">Food</span>
+              <span class="menu-badge-info"><i class="bi bi-fire" aria-hidden="true"></i> Baked fresh</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="food">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Avocado Toast</h3>
+              <span class="menu-item-price">KSh 520</span>
+            </div>
+            <p class="menu-item-desc">
+              Hass avocados from Murang'a mashed on sourdough baked in-house,
+              topped with pickled red onion, cherry tomatoes, dukkah, and
+              a drizzle of Kilifi cold-pressed olive oil.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge food">Food</span>
+              <span class="menu-badge-info"><i class="bi bi-leaf" aria-hidden="true"></i> Vegetarian</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="food">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3 class="menu-item-name">Banana Bread</h3>
+              <span class="menu-item-price">KSh 250</span>
+            </div>
+            <p class="menu-item-desc">
+              Baked every morning with overripe Kisumu bananas, dark chocolate
+              chips, and walnuts. Dense, moist, never dry. Best served warm
+              with a flat white — we'll warm it for you.
+            </p>
+            <div class="menu-item-footer">
+              <span class="menu-badge food">Food</span>
+              <span class="menu-badge-info"><i class="bi bi-clock" aria-hidden="true"></i> Made daily</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- END menuGrid -->
+
+      <!-- Message shown when no items match the filter -->
+      <div id="noResults" class="no-results" style="display:none;" aria-live="polite">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <p>No items in this category right now.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ALLERGEN NOTE -->
+  <section class="allergen-section" aria-label="Allergen information">
+    <div class="container">
+      <div class="allergen-box">
+        <i class="bi bi-info-circle-fill allergen-icon" aria-hidden="true"></i>
+        <div>
+          <strong>Allergen information:</strong> Our kitchen handles gluten, dairy, nuts, and eggs.
+          Please inform your barista of any allergies before ordering. We offer
+          oat milk, almond milk, and soy milk as dairy alternatives (KSh 80 extra).
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Visit us">
+    <div class="container text-center">
+      <h2 class="cta-title">Ready to order?</h2>
+      <p class="cta-desc">Walk in any day of the week. No reservations, no fuss — just great coffee.</p>
+      <a href="contact.html" class="btn btn-brand btn-lg">
+        <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>Get Directions
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="../index.html">
+            <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+          </a>
+          <p class="footer-tagline">Specialty coffee served with intention, every day since 2019.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="BrewNairobi on Instagram" class="social-link"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Facebook" class="social-link"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-links">
+            <li>Mon – Fri: 7am – 9pm</li>
+            <li>Saturday: 8am – 9pm</li>
+            <li>Sunday: 9am – 6pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span id="year"></span> BrewNairobi. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <!-- Menu-specific JS -->
+  <script src="../js/menu.js"></script>
+
+</body>
+</html>
