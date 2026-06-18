@@ -862,3 +862,204 @@ body.dark-mode .site-footer {
     left: 0.5rem; /* Don't go outside screen on mobile */
   }
 }
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: MENU PAGE
+---------------------------------------------------------------- */
+
+.menu-section {
+  padding: var(--section-gap) 0;
+}
+
+/* Filter buttons row */
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;      /* Wrap to next line on small screens */
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border-colour);
+  color: var(--text-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;    /* Pill shape */
+  cursor: pointer;
+  transition: background-color var(--transition),
+              border-color var(--transition),
+              color var(--transition);
+}
+.filter-btn:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+/* Active (selected) filter button */
+.filter-btn.active {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--white);
+}
+
+/* Menu item card */
+.menu-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;     /* Needed for .menu-featured-tag positioning */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+
+/* Featured card gets an accent border on the left */
+.menu-card--featured {
+  border-left: 3px solid var(--brand-accent);
+}
+
+/* "Staff Pick" tag in top-right of featured card */
+.menu-featured-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--brand-accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Top row of card: item name + price side by side */
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.menu-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-display);
+  margin: 0;
+  /* Dotted underline signals there's a tooltip on hover */
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--border-colour);
+  text-underline-offset: 3px;
+}
+/* Items without tooltips shouldn't have the dotted underline */
+.menu-item-name:not([data-bs-toggle]) {
+  cursor: default;
+  text-decoration: none;
+}
+.menu-item-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  white-space: nowrap;    /* Price never wraps to next line */
+  flex-shrink: 0;
+}
+
+.menu-item-desc {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* Bottom row: category badge + extra info */
+.menu-item-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Coloured category badges */
+.menu-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+}
+.menu-badge.espresso { background: #FDE8D8; color: #7A3010; }
+.menu-badge.filter   { background: #E2EFD8; color: #2D5A1B; }
+.menu-badge.cold     { background: #D8EDF5; color: #0E4D6A; }
+.menu-badge.tea      { background: #EAD8F5; color: #5A1E80; }
+.menu-badge.food     { background: #F5ECD8; color: #7A5010; }
+
+/* Small grey info tag (size, brew time, etc.) */
+.menu-badge-info {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Fade-in animation for menu items when filter is applied */
+.menu-item {
+  /* Start invisible */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* JS adds this class to make items visible */
+.menu-item.menu-item-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* "No results" message */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  gap: 0.75rem;
+}
+.no-results i {
+  font-size: 2.5rem;
+}
+
+/* Allergen info box */
+.allergen-section {
+  padding: 0 0 var(--section-gap);
+}
+.allergen-box {
+  background: #FFF8EE;
+  border: 1px solid #F0DABD;
+  border-radius: var(--card-radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+.allergen-icon {
+  color: var(--brand-accent);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
