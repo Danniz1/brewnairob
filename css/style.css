@@ -80,10 +80,10 @@ a {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    3. TYPOGRAPHY
    Consistent heading sizes across all pages
----------------------------------------------------------------- */
+   */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--text-dark);
@@ -91,10 +91,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/*  
    4. COMPONENT: NAVBAR
    Styles for the top navigation bar
----------------------------------------------------------------- */
+   */
 #mainNav {
   background-color: var(--brand-primary); /* Dark brown background */
   padding: 0.85rem 0;
