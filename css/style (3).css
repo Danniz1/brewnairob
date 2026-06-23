@@ -1,0 +1,1483 @@
+/* ================================================================
+   BREWNAIROB I - style.css
+   Order of sections:
+   1. CSS Custom Properties (variables)  - our design tokens
+   2. Reset & Base                       - sensible defaults
+   3. Typography                         - headings, body text
+   4. Components: Navbar
+   5. Components: Hero Section
+   6. Components: Features Section
+   7. Components: Footer
+   8. Utilities                          - reusable helper classes
+   9. Media Queries                      - responsive adjustments
+================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   Define once here, use everywhere. To change the brand colour,
+   you only need to edit ONE line.
+---------------------------------------------------------------- */
+:root {
+  /* Brand colours */
+  --brand-primary: #6B3F1E;        /* Deep coffee brown - main brand colour */
+  --brand-primary-hover: #7f4e28;  /* Lighter brown for hover states */
+  --brand-accent: #C8882A;         /* Golden amber - secondary accent */
+  --brand-light: #FDF6EE;          /* Warm cream - used for backgrounds */
+
+  /* Neutral colours */
+  --text-dark: #1A1A1A;            /* Near-black for headings */
+  --text-body: #4A4A4A;            /* Dark grey for body text */
+  --text-muted: #8A8A8A;           /* Light grey for captions, labels */
+  --border-colour: #E8DDD3;        /* Warm grey border */
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;   /* Headings */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif; /* Body */
+
+  /* Spacing scale */
+  --section-gap: 5rem;     /* Space between major sections */
+  --card-radius: 14px;     /* Rounded corners on cards */
+  --btn-radius: 50px;      /* Pill-shaped buttons */
+
+  /* Transitions */
+  --transition: 0.25s ease;
+}
+
+
+/* ----------------------------------------------------------------
+   2. RESET & BASE
+   Remove browser inconsistencies and set sensible defaults
+---------------------------------------------------------------- */
+
+/* box-sizing: border-box means padding/border are INCLUDED in width */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling when clicking anchor links (e.g. #section-id) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background-color: var(--white);
+  line-height: 1.7;          /* Comfortable reading line height */
+  -webkit-font-smoothing: antialiased; /* Crisper text on Mac */
+}
+
+/* Remove default list bullets in nav and footer */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Images should never overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove underlines from links by default, re-add where needed */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ----------------------------------------------------------------
+   3. TYPOGRAPHY
+   Consistent heading sizes across all pages
+---------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+
+/* ----------------------------------------------------------------
+   4. COMPONENT: NAVBAR
+   Styles for the top navigation bar
+---------------------------------------------------------------- */
+#mainNav {
+  background-color: var(--brand-primary); /* Dark brown background */
+  padding: 0.85rem 0;
+  /* Adds a subtle shadow below the sticky navbar */
+  box-shadow: 0 2px 12px rgba(107, 63, 30, 0.18);
+}
+
+/* Brand (logo text) in the navbar */
+.navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--white) !important; /* Override Bootstrap's colour */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Individual nav links */
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.82) !important; /* Slightly translucent white */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 6px;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+/* Hover and active states for nav links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--white) !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Override Bootstrap's hamburger icon colour */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255%2c255%2c255%2c0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ----------------------------------------------------------------
+   SHARED BUTTON STYLES
+   Our custom brand buttons (not Bootstrap defaults)
+   .btn-brand  = solid filled button (primary CTA)
+   .btn-outline-brand = outlined button (secondary CTA)
+---------------------------------------------------------------- */
+.btn-brand {
+  background-color: var(--brand-accent);   /* Golden amber fill */
+  border: 2px solid var(--brand-accent);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--btn-radius);
+  padding: 0.55rem 1.4rem;
+  transition: background-color var(--transition), transform var(--transition);
+  letter-spacing: 0.01em;
+}
+.btn-brand:hover {
+  background-color: #b07520;  /* Darker amber on hover */
+  border-color: #b07520;
+  color: var(--white);
+  transform: translateY(-1px); /* Subtle lift effect */
+}
+
+.btn-outline-brand {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--btn-radius);
+  padding: 0.55rem 1.4rem;
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+.btn-outline-brand:hover {
+  background-color: var(--white);
+  color: var(--brand-primary);
+  transform: translateY(-1px);
+}
+
+/* Branded text colour utility */
+.text-brand {
+  color: var(--brand-accent);
+}
+
+
+/* ----------------------------------------------------------------
+   5. COMPONENT: HERO SECTION
+   The large banner at the top of the home page
+---------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
+  color: var(--white);
+  padding: 5.5rem 0 4.5rem; /* More top padding to clear the sticky navbar */
+  overflow: hidden;           /* Prevents float card from creating scroll */
+}
+
+/* Small label above the hero headline */
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(200, 136, 42, 0.4);
+  padding: 0.25rem 0.8rem;
+  border-radius: 50px;
+}
+
+/* Main H1 headline */
+.hero-headline {
+  font-size: clamp(2.4rem, 5vw, 3.6rem); /* Fluid: shrinks on small screens */
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+/* Description paragraph */
+.hero-description {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+/* Small pill badges below the CTA buttons */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+/* Image wrapper - position:relative lets us position the float card */
+.hero-img-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden; /* Clips the image to the rounded corners */
+}
+.hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;  /* Fills the box, crops if needed, never distorts */
+  border-radius: 20px;
+  display: block;
+}
+
+/* Floating stat card that overlays the hero image */
+.hero-float-card {
+  position: absolute;  /* Positioned relative to .hero-img-wrap */
+  bottom: 1.5rem;
+  left: -1.5rem;       /* Slightly outside the image */
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.float-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  line-height: 1;
+}
+.float-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 0.25rem;
+}
+
+
+/* ----------------------------------------------------------------
+   6. COMPONENT: FEATURES SECTION
+   The 3-column "why us" cards below the hero
+---------------------------------------------------------------- */
+.features-section {
+  padding: var(--section-gap) 0;
+  background-color: var(--brand-light); /* Warm cream background */
+}
+
+/* Section header shared across all sections */
+.section-header {
+  margin-bottom: 3rem;
+}
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--text-dark);
+}
+
+/* Individual feature card */
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 2rem 1.75rem;
+  height: 100%;               /* Equal height within Bootstrap row */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+/* Lift the card slightly on hover */
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+
+/* Icon circle inside each card */
+.feature-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: var(--brand-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.feature-icon {
+  font-size: 1.4rem;
+  color: var(--brand-primary);
+}
+
+.feature-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+}
+.feature-desc {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   7. COMPONENT: FOOTER
+   Shared footer used across all pages
+---------------------------------------------------------------- */
+.site-footer {
+  /* FIX: previously used var(--text-dark), which flips to a near-white
+     colour in dark mode (since --text-dark becomes light text on dark
+     backgrounds). That made the footer background turn white while the
+     text stayed white too — invisible text. Using a fixed hex value here
+     means the footer always stays a dark band, in both light and dark mode. */
+  background-color: #1A1208;  /* Fixed near-black brown — never changes */
+  color: rgba(255, 255, 255, 0.72);
+  padding: 4rem 0 0;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: #FFFFFF;  /* Fixed white — not var(--white), which also flips in dark mode */
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 260px;
+}
+
+/* Social media icon links */
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+.social-link:hover {
+  background: var(--brand-accent);
+  color: var(--white);
+}
+
+/* Column headings inside the footer */
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;  /* Fixed white — see note on .site-footer above */
+  margin-bottom: 1rem;
+}
+
+/* Footer link lists */
+.footer-links li {
+  margin-bottom: 0.55rem;
+  font-size: 0.875rem;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+.footer-links a:hover {
+  color: var(--brand-accent);
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.25rem 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: NAVBAR SCROLLED STATE
+   When JS adds .scrolled class, shrink the navbar padding slightly
+---------------------------------------------------------------- */
+#mainNav.scrolled {
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 20px rgba(107, 63, 30, 0.25);
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: PAGE HERO (inner pages)
+   Smaller banner used on About, Menu, Gallery, etc.
+   Sits directly below the navbar
+---------------------------------------------------------------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
+  padding: 3.5rem 0 3rem;
+  color: var(--white);
+}
+
+/* Bootstrap breadcrumb overrides for dark background */
+.page-hero .breadcrumb-item a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color var(--transition);
+}
+.page-hero .breadcrumb-item a:hover {
+  color: var(--brand-accent);
+}
+.page-hero .breadcrumb-item.active {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.85rem;
+}
+/* The "/" separator between breadcrumb items */
+.page-hero .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255,255,255,0.4);
+}
+
+.page-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  margin-top: 0.5rem;
+}
+.page-hero-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: STORY SECTION (About page)
+---------------------------------------------------------------- */
+.story-section {
+  padding: var(--section-gap) 0;
+}
+
+.story-text {
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 0.97rem;
+}
+
+/* 4-column stats grid below the story text */
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-colour);
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+/* Stacked images on the right column */
+.about-img-stack {
+  position: relative;
+  padding-bottom: 3rem;
+}
+.about-img-main {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+}
+/* Small image overlapping the bottom-left of the main image */
+.about-img-small {
+  position: absolute;
+  bottom: 0;
+  left: -1.5rem;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  border: 4px solid var(--white);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: VALUES SECTION (About page)
+---------------------------------------------------------------- */
+.values-section {
+  padding: var(--section-gap) 0;
+  background: var(--brand-light);
+}
+
+.value-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 2rem 1.75rem;
+  height: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+.value-icon {
+  font-size: 1.75rem;
+  color: var(--brand-accent);
+  display: block;
+  margin-bottom: 1rem;
+}
+.value-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+}
+.value-desc {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: TEAM SECTION (About page)
+---------------------------------------------------------------- */
+.team-section {
+  padding: var(--section-gap) 0;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+.team-img-wrap {
+  overflow: hidden;
+  height: 220px;
+}
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* zoom in slightly on hover for a nice effect */
+  transition: transform 0.4s ease;
+}
+.team-card:hover .team-img {
+  transform: scale(1.05);
+}
+.team-info {
+  padding: 1.25rem;
+}
+.team-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+.team-role {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--brand-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+}
+.team-bio {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: CTA SECTION (shared - used on multiple pages)
+---------------------------------------------------------------- */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
+  color: var(--white);
+}
+.cta-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.cta-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+
+/* ----------------------------------------------------------------
+   8. UTILITIES
+   Small reusable classes used throughout
+---------------------------------------------------------------- */
+
+/* Visually hide something but keep it readable by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   9. MEDIA QUERIES
+   Fine-tune layout for specific screen sizes.
+   Bootstrap handles most responsiveness — these are our additions.
+---------------------------------------------------------------- */
+
+/* Tablet and below (< 992px) */
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+  }
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-badges {
+    justify-content: center;
+  }
+  .d-flex.flex-wrap.gap-3.mt-4 {
+    justify-content: center;
+  }
+  /* Float card sits inside the image on mobile (not outside) */
+  .hero-float-card {
+    left: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Mobile (< 576px) */
+@media (max-width: 575.98px) {
+  .hero-img {
+    height: 280px; /* Shorter image on small phones */
+  }
+  .feature-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   SCROLL-TO-TOP BUTTON
+   Fixed in bottom-right corner. Hidden by default.
+   JS adds .visible class after user scrolls 300px
+---------------------------------------------------------------- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  color: var(--white);
+  border: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(107,63,30,0.35);
+  cursor: pointer;
+  /* Hidden by default - opacity:0 and pointer-events:none means it's invisible and unclickable */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 999;
+}
+/* JS adds this class to show the button */
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.scroll-top-btn:hover {
+  background: var(--brand-primary-hover);
+  transform: translateY(-2px);
+}
+
+
+/* ----------------------------------------------------------------
+   RESPONSIVE: ABOUT PAGE ADJUSTMENTS
+---------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .story-stats {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+  .about-img-small {
+    left: 0.5rem; /* Don't go outside screen on mobile */
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: MENU PAGE
+---------------------------------------------------------------- */
+
+.menu-section {
+  padding: var(--section-gap) 0;
+}
+
+/* Filter buttons row */
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;      /* Wrap to next line on small screens */
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border-colour);
+  color: var(--text-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;    /* Pill shape */
+  cursor: pointer;
+  transition: background-color var(--transition),
+              border-color var(--transition),
+              color var(--transition);
+}
+.filter-btn:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+/* Active (selected) filter button */
+.filter-btn.active {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--white);
+}
+
+/* Menu item card */
+.menu-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;     /* Needed for .menu-featured-tag positioning */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+
+/* Featured card gets an accent border on the left */
+.menu-card--featured {
+  border-left: 3px solid var(--brand-accent);
+}
+
+/* "Staff Pick" tag in top-right of featured card */
+.menu-featured-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--brand-accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Top row of card: item name + price side by side */
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.menu-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-family: var(--font-display);
+  margin: 0;
+  /* Dotted underline signals there's a tooltip on hover */
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--border-colour);
+  text-underline-offset: 3px;
+}
+/* Items without tooltips shouldn't have the dotted underline */
+.menu-item-name:not([data-bs-toggle]) {
+  cursor: default;
+  text-decoration: none;
+}
+.menu-item-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  white-space: nowrap;    /* Price never wraps to next line */
+  flex-shrink: 0;
+}
+
+.menu-item-desc {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* Bottom row: category badge + extra info */
+.menu-item-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Coloured category badges */
+.menu-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+}
+.menu-badge.espresso { background: #FDE8D8; color: #7A3010; }
+.menu-badge.filter   { background: #E2EFD8; color: #2D5A1B; }
+.menu-badge.cold     { background: #D8EDF5; color: #0E4D6A; }
+.menu-badge.tea      { background: #EAD8F5; color: #5A1E80; }
+.menu-badge.food     { background: #F5ECD8; color: #7A5010; }
+
+/* Small grey info tag (size, brew time, etc.) */
+.menu-badge-info {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Fade-in animation for menu items when filter is applied */
+.menu-item {
+  /* Start invisible */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* JS adds this class to make items visible */
+.menu-item.menu-item-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* "No results" message */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  gap: 0.75rem;
+}
+.no-results i {
+  font-size: 2.5rem;
+}
+
+/* Allergen info box */
+.allergen-section {
+  padding: 0 0 var(--section-gap);
+}
+.allergen-box {
+  background: #FFF8EE;
+  border: 1px solid #F0DABD;
+  border-radius: var(--card-radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+.allergen-icon {
+  color: var(--brand-accent);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: CONTACT PAGE
+---------------------------------------------------------------- */
+.contact-section {
+  padding: var(--section-gap) 0;
+}
+
+/* Form card wrapper */
+.contact-form-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 2.5rem;
+}
+.contact-form-title {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+.contact-form-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+/* Form labels */
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+.required-star {
+  color: #C0392B; /* Red asterisk for required fields */
+}
+
+/* Bootstrap form controls - custom focus colour to match brand */
+.form-control,
+.form-select {
+  border: 1.5px solid var(--border-colour);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(107, 63, 30, 0.12);
+}
+
+/* Invalid (error) state - red border */
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #C0392B;
+}
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* Valid state - subtle green border, no distracting checkmark icon */
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: #2D8A4E;
+}
+
+/* Error message text under each field */
+.invalid-feedback {
+  display: none; /* JS toggles this to 'block' */
+  font-size: 0.78rem;
+  color: #C0392B;
+  margin-top: 0.35rem;
+}
+
+/* Helper hint text (e.g. "Optional", character counter) */
+.form-hint {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.35rem;
+}
+
+/* Success banner shown after valid submission */
+.form-success-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #EAF6EE;
+  border: 1px solid #BCE3C9;
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  color: #1E6B3A;
+}
+.form-success-banner i {
+  font-size: 1.8rem;
+  color: #2D8A4E;
+  flex-shrink: 0;
+}
+.form-success-banner p {
+  color: #2D7349;
+  font-size: 0.88rem;
+}
+
+/* Contact info list (right column) */
+.contact-info-list {
+  margin-bottom: 1.75rem;
+}
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--brand-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.contact-info-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+.contact-info-value {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Simple "Get Directions" card — replaces the embedded Google Map.
+   Cleaner and lighter than an iframe; opens Google Maps in a new tab. */
+.directions-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--brand-light);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.directions-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(107, 63, 30, 0.12);
+}
+.directions-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.directions-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 0.15rem;
+}
+.directions-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.directions-arrow {
+  margin-left: auto;
+  color: var(--brand-primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   RESPONSIVE: CONTACT PAGE
+---------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: PLACEHOLDER ("COMING SOON") PAGES
+   Used as a temporary stand-in for pages not yet built
+   (Gallery, Blog, FAQ, Reviews) so navigation never 404s
+---------------------------------------------------------------- */
+.placeholder-section {
+  padding: 6rem 0;
+}
+.placeholder-icon {
+  font-size: 3rem;
+  color: var(--brand-accent);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.placeholder-title {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+.placeholder-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 460px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: GALLERY PAGE
+---------------------------------------------------------------- */
+.gallery-section {
+  padding: var(--section-gap) 0;
+}
+
+/* Each gallery photo card */
+.gallery-card {
+  position: relative;     /* Needed so .gallery-overlay can sit on top */
+  border-radius: var(--card-radius);
+  overflow: hidden;        /* Clips image corners */
+  cursor: pointer;
+  aspect-ratio: 4 / 3;      /* Keeps all photos the same shape */
+}
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-card:hover img {
+  transform: scale(1.08);  /* Zoom in slightly on hover */
+}
+
+/* Dark overlay with a zoom icon, appears on hover */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;                /* Shorthand for top/right/bottom/left: 0 */
+  background: rgba(26, 18, 10, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-overlay i {
+  color: var(--white);
+  font-size: 1.8rem;
+}
+
+/* Same fade-in animation pattern as menu items, applied to gallery */
+.gallery-item {
+  transition: opacity 0.3s ease;
+}
+
+/* Modal (lightbox) styling */
+.gallery-modal-content {
+  background: var(--text-dark);
+  border: none;
+  border-radius: var(--card-radius);
+  padding: 1rem;
+  position: relative;
+}
+.gallery-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  padding: 0.5rem;
+  opacity: 1;
+}
+.modal-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;     /* Shows the whole image without cropping */
+  border-radius: 10px;
+}
+.modal-caption {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: BLOG LISTING PAGE
+---------------------------------------------------------------- */
+.blog-section {
+  padding: var(--section-gap) 0;
+}
+
+/* Search input bar */
+.blog-search-wrap {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto 3rem;
+}
+.blog-search-icon {
+  position: absolute;
+  left: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.blog-search-input {
+  width: 100%;
+  padding: 0.8rem 1.1rem 0.8rem 2.6rem;
+  border: 1.5px solid var(--border-colour);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.blog-search-input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(107, 63, 30, 0.12);
+}
+
+/* Remove underline from the whole card link wrapper */
+.blog-card-link {
+  display: block;
+  height: 100%;
+}
+
+/* Blog article card */
+.blog-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+
+.blog-card-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.blog-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.blog-card:hover .blog-card-img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Category tag overlaid on the image */
+.blog-category-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--brand-accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+
+.blog-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.blog-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.blog-card-title {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+.blog-card-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Pushes "Read more" to the bottom regardless of text length */
+}
+.blog-read-more {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--transition);
+}
+.blog-card:hover .blog-read-more {
+  gap: 0.7rem; /* Arrow nudges further right on hover */
+}
+
+
+/* ----------------------------------------------------------------
+   COMPONENT: SINGLE ARTICLE PAGE (blog-post.html)
+---------------------------------------------------------------- */
+.article-section {
+  padding: 3rem 0 5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.article-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0.5rem 0 1rem;
+  color: var(--text-dark);
+}
+.article-lede {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.article-hero-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  margin-bottom: 2.5rem;
+}
+.article-body p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+}
+.article-body h2 {
+  font-size: 1.35rem;
+  color: var(--text-dark);
+  margin: 2rem 0 1rem;
+}

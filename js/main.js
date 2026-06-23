@@ -6,9 +6,8 @@
    1. DOMContentLoaded wrapper  — waits for HTML to fully load
    2. setCurrentYear()          — auto-updates copyright year
    3. setActiveNavLink()        — highlights the current page in nav
-   4. initDarkModeToggle()      — dark/light theme switcher
-   5. initScrollToTop()         — floating scroll-to-top button
-   6. initNavbarShrink()        — navbar shrinks on scroll
+   4. initScrollToTop()         — floating scroll-to-top button
+   5. initNavbarShrink()        — navbar shrinks on scroll
 
    WHY NAMED FUNCTIONS?
    Named functions are easier to read, debug, and reuse.
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setCurrentYear();
   setActiveNavLink();
-  initDarkModeToggle();
   initScrollToTop();
   initNavbarShrink();
 
@@ -85,54 +83,7 @@ function setActiveNavLink() {
 
 
 /* ----------------------------------------------------------------
-   4. initDarkModeToggle
-   Handles the dark/light mode button (added to navbar on Day 2).
-   - Checks localStorage to remember the user's preference
-   - Toggles the .dark-mode class on <body>
-   - Saves the preference so it persists across page refreshes
----------------------------------------------------------------- */
-function initDarkModeToggle() {
-  /* Look for the toggle button — may not exist on every page yet */
-  const toggle = document.querySelector('#darkModeToggle');
-  if (!toggle) return;
-
-  /* localStorage lets us save small pieces of data in the browser.
-     It persists even when the page is refreshed or browser is closed. */
-  const saved = localStorage.getItem('brewNairobi_darkMode');
-
-  /* If the user previously chose dark mode, apply it immediately */
-  if (saved === 'enabled') {
-    document.body.classList.add('dark-mode');
-    updateToggleIcon(toggle, true);
-  }
-
-  /* Listen for clicks on the toggle button */
-  toggle.addEventListener('click', function () {
-    /* classList.toggle adds the class if absent, removes it if present */
-    const isDark = document.body.classList.toggle('dark-mode');
-
-    /* Save the user's choice to localStorage */
-    localStorage.setItem('brewNairobi_darkMode', isDark ? 'enabled' : 'disabled');
-
-    /* Update the button icon to reflect the current mode */
-    updateToggleIcon(toggle, isDark);
-  });
-}
-
-/* Helper: changes the icon inside the dark mode button */
-function updateToggleIcon(button, isDark) {
-  /* If dark mode is ON, show a sun icon (to switch TO light) */
-  /* If dark mode is OFF, show a moon icon (to switch TO dark) */
-  const icon = button.querySelector('i');
-  if (!icon) return;
-  icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-  /* Update aria-label for screen readers */
-  button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-}
-
-
-/* ----------------------------------------------------------------
-   5. initScrollToTop
+   4. initScrollToTop
    Shows a floating button in the bottom-right corner after the user
    scrolls down 300px. Clicking it smoothly scrolls back to the top.
 ---------------------------------------------------------------- */
