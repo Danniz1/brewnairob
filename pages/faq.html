@@ -1,104 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FAQ | BrewNairobi</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | BrewNairobi</title>
+  <meta name="description" content="Answers to the most common questions about BrewNairobi — hours, sourcing, dietary options, reservations and more." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
-  <div class="container">
-    <a class="navbar-brand" href="../index.html"><i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-        <li class="nav-item"><a class="nav-link " href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link active" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link " href="testimonials.html">Reviews</a></li>        <li class="nav-item ms-lg-1"><a class="btn btn-brand" href="contact.html">Visit Us</a></li>
-      </ul>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link active" href="faq.html" aria-current="page">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+          <li class="nav-item ms-lg-1">
+            <a class="btn btn-brand" href="contact.html">Visit Us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<section class="page-hero" aria-label="Page header">
-  <div class="container text-center">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb justify-content-center">
-        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
-      </ol>
-    </nav>
-    <h1 class="page-hero-title">FAQ</h1>
-    <p class="page-hero-subtitle">Answers to the questions we get asked the most.</p>
-  </div>
-</section>
 
-<section class="placeholder-section" aria-label="Coming soon">
-  <div class="container text-center">
-    <i class="bi bi-cup-hot placeholder-icon" aria-hidden="true"></i>
-    <h2 class="placeholder-title">This page is brewing</h2>
-    <p class="placeholder-desc">We're putting the finishing touches on this section. Check back soon, or explore the rest of the site in the meantime.</p>
-    <a href="../index.html" class="btn btn-brand btn-lg"><i class="bi bi-house me-2" aria-hidden="true"></i>Back to Home</a>
-  </div>
-</section>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Page header">
+    <div class="container text-center">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+        </ol>
+      </nav>
+      <h1 class="page-hero-title">Frequently Asked Questions</h1>
+      <p class="page-hero-subtitle">Everything you might want to know before your first (or fiftieth) visit</p>
+    </div>
+  </section>
 
-<footer class="site-footer" aria-label="Site footer">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-4">
-        <a class="footer-brand" href="../index.html"><i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi</a>
-        <p class="footer-tagline">Specialty coffee served with intention, every day since 2019.</p>
-        <div class="footer-socials">
-          <a href="#" aria-label="BrewNairobi on Instagram" class="social-link"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-          <a href="#" aria-label="BrewNairobi on Facebook" class="social-link"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+
+  <!-- 
+       FAQ ACCORDION SECTION
+   -->
+  <section class="faq-section" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+          <!--  GENERAL  -->
+          <h2 class="faq-category-title">General</h2>
+          <div class="accordion" id="faqAccordionGeneral">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqG1" aria-expanded="true" aria-controls="faqG1">
+                  Do I need a reservation?
+                </button>
+              </h3>
+              <div id="faqG1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionGeneral">
+                <div class="accordion-body">
+                  No reservation needed for regular visits — we operate on a
+                  first-come, first-served basis. For groups of 8 or more, or
+                  for our private meeting room, please contact us at least
+                  24 hours in advance via the Contact page.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqG2" aria-expanded="false" aria-controls="faqG2">
+                  What are your opening hours?
+                </button>
+              </h3>
+              <div id="faqG2" class="accordion-collapse collapse" data-bs-parent="#faqAccordionGeneral">
+                <div class="accordion-body">
+                  We're open Monday to Friday from 7:00am to 9:00pm, Saturday
+                  from 8:00am to 9:00pm, and Sunday from 9:00am to 6:00pm.
+                  Hours may vary slightly on public holidays — check our
+                  Instagram for any changes.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqG3" aria-expanded="false" aria-controls="faqG3">
+                  Is there parking available?
+                </button>
+              </h3>
+              <div id="faqG3" class="accordion-collapse collapse" data-bs-parent="#faqAccordionGeneral">
+                <div class="accordion-body">
+                  Yes — there's free street parking along Kilimani Road, and
+                  a small paid parking lot directly behind our building that
+                  charges KSh 100 per hour.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqG4" aria-expanded="false" aria-controls="faqG4">
+                  Do you have Wi-Fi and charging outlets?
+                </button>
+              </h3>
+              <div id="faqG4" class="accordion-collapse collapse" data-bs-parent="#faqAccordionGeneral">
+                <div class="accordion-body">
+                  Yes, free fibre Wi-Fi throughout the space, and most tables
+                  have nearby power outlets. The back section is specifically
+                  arranged for remote workers and laptops.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!--  MENU & DIETARY  -->
+          <h2 class="faq-category-title">Menu &amp; Dietary</h2>
+          <div class="accordion" id="faqAccordionMenu">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqM1" aria-expanded="false" aria-controls="faqM1">
+                  Do you offer dairy-free milk alternatives?
+                </button>
+              </h3>
+              <div id="faqM1" class="accordion-collapse collapse" data-bs-parent="#faqAccordionMenu">
+                <div class="accordion-body">
+                  Yes — we offer oat milk, almond milk, and soy milk for an
+                  additional KSh 80. Oat milk is our most popular alternative
+                  and steams especially well for latte art.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqM2" aria-expanded="false" aria-controls="faqM2">
+                  Where do your coffee beans come from?
+                </button>
+              </h3>
+              <div id="faqM2" class="accordion-collapse collapse" data-bs-parent="#faqAccordionMenu">
+                <div class="accordion-body">
+                  We source directly from eleven smallholder farms across
+                  Nyeri, Kirinyaga, and Murang'a in Kenya's Central
+                  Highlands. Every bean is roasted in-house, usually within
+                  two weeks of arrival. Read more on our
+                  <a href="blog-post-nyeri-farmers.html">farm visit blog post</a>.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqM3" aria-expanded="false" aria-controls="faqM3">
+                  Do you have vegetarian or vegan food options?
+                </button>
+              </h3>
+              <div id="faqM3" class="accordion-collapse collapse" data-bs-parent="#faqAccordionMenu">
+                <div class="accordion-body">
+                  Our avocado toast and banana bread are vegetarian, and can
+                  be made vegan on request (vegan butter substitute, no
+                  honey drizzle). Ask your barista — most of our pastries
+                  can be adapted with a little notice.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqM4" aria-expanded="false" aria-controls="faqM4">
+                  Can I buy your coffee beans to take home?
+                </button>
+              </h3>
+              <div id="faqM4" class="accordion-collapse collapse" data-bs-parent="#faqAccordionMenu">
+                <div class="accordion-body">
+                  Yes — all our single origins are available as 250g retail
+                  bags at the counter, whole bean or ground to your
+                  preferred brew method. Prices range from KSh 950 to
+                  KSh 1,400 depending on the origin.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!--  EVENTS & COMMUNITY  -->
+          <h2 class="faq-category-title">Events &amp; Community</h2>
+          <div class="accordion" id="faqAccordionEvents">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqE1" aria-expanded="false" aria-controls="faqE1">
+                  What happens at your Saturday cupping sessions?
+                </button>
+              </h3>
+              <div id="faqE1" class="accordion-collapse collapse" data-bs-parent="#faqAccordionEvents">
+                <div class="accordion-body">
+                  Every Saturday at 10am, our head roaster leads a free,
+                  open-to-the-public cupping of two or three current single
+                  origins. No booking required — just show up a few minutes
+                  early, space is limited to about 15 people.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqE2" aria-expanded="false" aria-controls="faqE2">
+                  Do you offer barista training or workshops?
+                </button>
+              </h3>
+              <div id="faqE2" class="accordion-collapse collapse" data-bs-parent="#faqAccordionEvents">
+                <div class="accordion-body">
+                  Yes — we run beginner espresso and latte art workshops on
+                  the last Sunday of every month. Sessions are KSh 2,500 per
+                  person and include all materials. Message us via the
+                  Contact page to reserve a spot.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqE3" aria-expanded="false" aria-controls="faqE3">
+                  Can I host a private event or meeting here?
+                </button>
+              </h3>
+              <div id="faqE3" class="accordion-collapse collapse" data-bs-parent="#faqAccordionEvents">
+                <div class="accordion-body">
+                  Our private meeting room seats up to 10 and can be booked
+                  for KSh 3,000 for a half-day, which includes unlimited
+                  coffee for your group. For larger events or full-venue
+                  bookings, reach out through the Contact page with your
+                  date and group size.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
-      <div class="col-6 col-lg-2 offset-lg-2">
-        <h4 class="footer-heading">Pages</h4>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-        </ul>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Still have questions">
+    <div class="container text-center">
+      <h2 class="cta-title">Still have a question?</h2>
+      <p class="cta-desc">We're happy to help — send us a message and we'll get back to you within a day.</p>
+      <a href="contact.html" class="btn btn-brand btn-lg">
+        <i class="bi bi-envelope me-2" aria-hidden="true"></i>Contact Us
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="../index.html">
+            <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+          </a>
+          <p class="footer-tagline">Specialty coffee served with intention, every day since 2019.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="BrewNairobi on Instagram" class="social-link"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Facebook" class="social-link"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-links">
+            <li>Mon – Fri: 7am – 9pm</li>
+            <li>Saturday: 8am – 9pm</li>
+            <li>Sunday: 9am – 6pm</li>
+          </ul>
+        </div>
       </div>
-      <div class="col-6 col-lg-2">
-        <h4 class="footer-heading">More</h4>
-        <ul class="footer-links">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="testimonials.html">Reviews</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2">
-        <h4 class="footer-heading">Hours</h4>
-        <ul class="footer-links">
-          <li>Mon – Fri: 7am – 9pm</li>
-          <li>Saturday: 8am – 9pm</li>
-          <li>Sunday: 9am – 6pm</li>
-        </ul>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span id="year"></span> BrewNairobi. All rights reserved.</p>
       </div>
     </div>
-    <div class="footer-bottom"><p class="mb-0">&copy; <span id="year"></span> BrewNairobi. All rights reserved.</p></div>
-  </div>
-</footer>
+  </footer>
 
-<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/main.js"></script>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+
 </body>
 </html>
