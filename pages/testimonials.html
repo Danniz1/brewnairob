@@ -1,104 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Reviews | BrewNairobi</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews | BrewNairobi</title>
+  <meta name="description" content="What our customers are saying about BrewNairobi — real reviews from regulars, remote workers, and first-time visitors." />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
-  <div class="container">
-    <a class="navbar-brand" href="../index.html"><i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-        <li class="nav-item"><a class="nav-link " href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link " href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link active" href="testimonials.html">Reviews</a></li>        <li class="nav-item ms-lg-1"><a class="btn btn-brand" href="contact.html">Visit Us</a></li>
-      </ul>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="testimonials.html" aria-current="page">Reviews</a></li>
+          <li class="nav-item ms-lg-1">
+            <a class="btn btn-brand" href="contact.html">Visit Us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<section class="page-hero" aria-label="Page header">
-  <div class="container text-center">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb justify-content-center">
-        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Reviews</li>
-      </ol>
-    </nav>
-    <h1 class="page-hero-title">Reviews</h1>
-    <p class="page-hero-subtitle">What our customers are saying about BrewNairobi.</p>
-  </div>
-</section>
 
-<section class="placeholder-section" aria-label="Coming soon">
-  <div class="container text-center">
-    <i class="bi bi-cup-hot placeholder-icon" aria-hidden="true"></i>
-    <h2 class="placeholder-title">This page is brewing</h2>
-    <p class="placeholder-desc">We're putting the finishing touches on this section. Check back soon, or explore the rest of the site in the meantime.</p>
-    <a href="../index.html" class="btn btn-brand btn-lg"><i class="bi bi-house me-2" aria-hidden="true"></i>Back to Home</a>
-  </div>
-</section>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Page header">
+    <div class="container text-center">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Reviews</li>
+        </ol>
+      </nav>
+      <h1 class="page-hero-title">What People Are Saying</h1>
+      <p class="page-hero-subtitle">4.9 out of 5 on Google, from over 600 reviews</p>
+    </div>
+  </section>
 
-<footer class="site-footer" aria-label="Site footer">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-4">
-        <a class="footer-brand" href="../index.html"><i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi</a>
-        <p class="footer-tagline">Specialty coffee served with intention, every day since 2019.</p>
-        <div class="footer-socials">
-          <a href="#" aria-label="BrewNairobi on Instagram" class="social-link"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-          <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-          <a href="#" aria-label="BrewNairobi on Facebook" class="social-link"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+
+  <!-- 
+       FEATURED  CAROUSEL
+   -->
+  <section class="featured-review-section" aria-label="Featured reviews">
+    <div class="container">
+      <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Carousel indicators (dots) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Review 1"></button>
+          <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="1" aria-label="Review 2"></button>
+          <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="2" aria-label="Review 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="featured-review">
+              <div class="featured-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <blockquote class="featured-quote">
+                "Best flat white in Nairobi, full stop. I've tried most of the
+                specialty places in Kilimani and Westlands and BrewNairobi is
+                the one I keep coming back to — consistent, never bitter,
+                and the staff actually know their beans."
+              </blockquote>
+              <span class="featured-author">— Wanjiru K., Google Review</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="featured-review">
+              <div class="featured-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <blockquote class="featured-quote">
+                "I work remotely and this has become my unofficial office.
+                Fast Wi-Fi, plenty of outlets, and nobody rushes you even
+                if you're camped out for four hours with one cortado."
+              </blockquote>
+              <span class="featured-author">— David O., Google Review</span>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="featured-review">
+              <div class="featured-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              <blockquote class="featured-quote">
+                "Took my visiting cousin here and she said it was better than
+                the coffee she'd had in Addis. The espresso mandazi is an
+                actual genius idea — more places need to be doing this."
+              </blockquote>
+              <span class="featured-author">— Faith N., Google Review</span>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!--REVIEW GRID-->
+  <section class="reviews-grid-section" aria-label="More reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">More from our customers</span>
+        <h2 class="section-title">600+ five-star reviews and counting</h2>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <div class="col">
+          <div class="review-card">
+            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="review-text">
+              "The Saturday cupping session changed how I order coffee
+              everywhere else. Genuinely educational and completely free."
+            </p>
+            <span class="review-author">Brian M.</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="review-card">
+            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="review-text">
+              "Tried the Aeropress on the staff's recommendation and it
+              completely changed my opinion of filter coffee. Smooth, no
+              bitterness at all."
+            </p>
+            <span class="review-author">Linda A.</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="review-card">
+            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="review-text">
+              "Booked the meeting room for a client pitch and it was perfect
+              — quiet, professional, and the coffee impressed everyone in
+              the room more than my slides did."
+            </p>
+            <span class="review-author">Samuel K.</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="review-card">
+            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="review-text">
+              "Oat milk latte here is better than most dairy lattes I've had
+              elsewhere. Didn't think I'd say that about a plant milk drink."
+            </p>
+            <span class="review-author">Naomi W.</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="review-card">
+            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="review-text">
+              "Did the barista workshop with my sister as a birthday gift
+              idea. We both left being able to actually pull a decent
+              rosetta. Highly recommend for something different to do."
+            </p>
+            <span class="review-author">Peter G.</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="review-card">
+            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p class="review-text">
+              "Banana bread is dangerously good. I've stopped offering to
+              share it with whoever I'm meeting there, no shame."
+            </p>
+            <span class="review-author">Mercy J.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Leave a review">
+    <div class="container text-center">
+      <h2 class="cta-title">Had a great visit?</h2>
+      <p class="cta-desc">We'd love to hear about it — leave us a review on Google or tag us on Instagram.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="#" class="btn btn-brand btn-lg">
+          <i class="bi bi-google me-2" aria-hidden="true"></i>Leave a Google Review
+        </a>
+        <a href="contact.html" class="btn btn-outline-dark btn-lg">
+          <i class="bi bi-chat-dots me-2" aria-hidden="true"></i>Share Feedback Directly
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <a class="footer-brand" href="../index.html">
+            <i class="bi bi-cup-hot-fill me-2" aria-hidden="true"></i>BrewNairobi
+          </a>
+          <p class="footer-tagline">Specialty coffee served with intention, every day since 2019.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="BrewNairobi on Instagram" class="social-link"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Twitter/X" class="social-link"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="BrewNairobi on Facebook" class="social-link"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">More</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h4 class="footer-heading">Hours</h4>
+          <ul class="footer-links">
+            <li>Mon – Fri: 7am – 9pm</li>
+            <li>Saturday: 8am – 9pm</li>
+            <li>Sunday: 9am – 6pm</li>
+          </ul>
         </div>
       </div>
-      <div class="col-6 col-lg-2 offset-lg-2">
-        <h4 class="footer-heading">Pages</h4>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <h4 class="footer-heading">More</h4>
-        <ul class="footer-links">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="testimonials.html">Reviews</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2">
-        <h4 class="footer-heading">Hours</h4>
-        <ul class="footer-links">
-          <li>Mon – Fri: 7am – 9pm</li>
-          <li>Saturday: 8am – 9pm</li>
-          <li>Sunday: 9am – 6pm</li>
-        </ul>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span id="year"></span> BrewNairobi. All rights reserved.</p>
       </div>
     </div>
-    <div class="footer-bottom"><p class="mb-0">&copy; <span id="year"></span> BrewNairobi. All rights reserved.</p></div>
-  </div>
-</footer>
+  </footer>
 
-<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/main.js"></script>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+
 </body>
 </html>
