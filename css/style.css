@@ -1,4 +1,4 @@
-/* ================================================================
+/* 
    BREWNAIROB I - style.css
    Order of sections:
    1. CSS Custom Properties (variables)  - our design tokens
@@ -10,14 +10,13 @@
    7. Components: Footer
    8. Utilities                          - reusable helper classes
    9. Media Queries                      - responsive adjustments
-================================================================ */
+ */
 
 
-/* ----------------------------------------------------------------
+/* 
    1. CSS CUSTOM PROPERTIES (VARIABLES)
-   Define once here, use everywhere. To change the brand colour,
-   you only need to edit ONE line.
----------------------------------------------------------------- */
+  
+ */
 :root {
   /* Brand colours */
   --brand-primary: #6B3F1E;        /* Deep coffee brown - main brand colour */
@@ -46,10 +45,10 @@
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    2. RESET & BASE
    Remove browser inconsistencies and set sensible defaults
----------------------------------------------------------------- */
+ */
 
 /* box-sizing: border-box means padding/border are INCLUDED in width */
 *,
@@ -94,10 +93,10 @@ a {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    3. TYPOGRAPHY
    Consistent heading sizes across all pages
----------------------------------------------------------------- */
+ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--text-dark);
@@ -105,10 +104,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    4. COMPONENT: NAVBAR
    Styles for the top navigation bar
----------------------------------------------------------------- */
+ */
 #mainNav {
   background-color: var(--brand-primary); /* Dark brown background */
   padding: 0.85rem 0;
@@ -151,12 +150,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    SHARED BUTTON STYLES
    Our custom brand buttons (not Bootstrap defaults)
    .btn-brand  = solid filled button (primary CTA)
    .btn-outline-brand = outlined button (secondary CTA)
----------------------------------------------------------------- */
+ */
 .btn-brand {
   background-color: var(--brand-accent);   /* Golden amber fill */
   border: 2px solid var(--brand-accent);
@@ -197,10 +196,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    5. COMPONENT: HERO SECTION
    The large banner at the top of the home page
----------------------------------------------------------------- */
+ */
 .hero-section {
   background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
   color: var(--white);
@@ -371,17 +370,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    7. COMPONENT: FOOTER
    Shared footer used across all pages
----------------------------------------------------------------- */
+ */
 .site-footer {
-  /* FIX: previously used var(--text-dark), which flips to a near-white
-     colour in dark mode (since --text-dark becomes light text on dark
-     backgrounds). That made the footer background turn white while the
-     text stayed white too — invisible text. Using a fixed hex value here
-     means the footer always stays a dark band, in both light and dark mode. */
-  background-color: #1A1208;  /* Fixed near-black brown — never changes */
+ 
+  background-color: #1A1208;  
   color: rgba(255, 255, 255, 0.72);
   padding: 4rem 0 0;
 }
@@ -389,7 +384,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-brand {
   font-family: var(--font-display);
   font-size: 1.4rem;
-  color: #FFFFFF;  /* Fixed white — not var(--white), which also flips in dark mode */
+  color: #FFFFFF;  
   font-weight: 700;
   display: inline-block;
   margin-bottom: 0.75rem;
@@ -432,7 +427,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #FFFFFF;  /* Fixed white — see note on .site-footer above */
+  color: #FFFFFF;  
   margin-bottom: 1rem;
 }
 
@@ -459,21 +454,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: NAVBAR SCROLLED STATE
-   When JS adds .scrolled class, shrink the navbar padding slightly
----------------------------------------------------------------- */
+/* COMPONENT: NAVBAR SCROLLED STATE*/
 #mainNav.scrolled {
   padding: 0.5rem 0;
   box-shadow: 0 4px 20px rgba(107, 63, 30, 0.25);
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: PAGE HERO (inner pages)
+/* COMPONENT: PAGE HERO (inner pages)
    Smaller banner used on About, Menu, Gallery, etc.
-   Sits directly below the navbar
----------------------------------------------------------------- */
+   Sits directly below the navbar */
 .page-hero {
   background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
   padding: 3.5rem 0 3rem;
@@ -513,9 +503,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: STORY SECTION (About page)
----------------------------------------------------------------- */
+/* COMPONENT: STORY SECTION (About page)*/
 .story-section {
   padding: var(--section-gap) 0;
 }
@@ -579,9 +567,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: VALUES SECTION (About page)
----------------------------------------------------------------- */
+/* COMPONENT: VALUES SECTION (About page)*/
 .values-section {
   padding: var(--section-gap) 0;
   background: var(--brand-light);
@@ -619,9 +605,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: TEAM SECTION (About page)
----------------------------------------------------------------- */
+/* COMPONENT: TEAM SECTION (About page)*/
 .team-section {
   padding: var(--section-gap) 0;
 }
@@ -645,7 +629,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* zoom in slightly on hover for a nice effect */
   transition: transform 0.4s ease;
 }
 .team-card:hover .team-img {
@@ -677,9 +660,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: CTA SECTION (shared - used on multiple pages)
----------------------------------------------------------------- */
+/* COMPONENT: CTA SECTION (shared - used on multiple pages)*/
 .cta-section {
   padding: 5rem 0;
   background: linear-gradient(135deg, var(--brand-primary) 0%, #3d1f08 100%);
@@ -699,10 +680,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   8. UTILITIES
-   Small reusable classes used throughout
----------------------------------------------------------------- */
+/* 8. UTILITIES
+   Small reusable classes used throughout*/
 
 /* Visually hide something but keep it readable by screen readers */
 .sr-only {
@@ -717,11 +696,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    9. MEDIA QUERIES
    Fine-tune layout for specific screen sizes.
    Bootstrap handles most responsiveness — these are our additions.
----------------------------------------------------------------- */
+ */
 
 /* Tablet and below (< 992px) */
 @media (max-width: 991.98px) {
@@ -757,11 +736,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
+/* 
    SCROLL-TO-TOP BUTTON
    Fixed in bottom-right corner. Hidden by default.
    JS adds .visible class after user scrolls 300px
----------------------------------------------------------------- */
+ */
 .scroll-top-btn {
   position: fixed;
   bottom: 2rem;
@@ -797,9 +776,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   RESPONSIVE: ABOUT PAGE ADJUSTMENTS
----------------------------------------------------------------- */
+/* RESPONSIVE: ABOUT PAGE ADJUSTMENTS*/
 @media (max-width: 767.98px) {
   .story-stats {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
@@ -810,9 +787,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: MENU PAGE
----------------------------------------------------------------- */
+/* COMPONENT: MENU PAGE */
 
 .menu-section {
   padding: var(--section-gap) 0;
@@ -900,7 +875,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-dark);
   font-family: var(--font-display);
   margin: 0;
-  /* Dotted underline signals there's a tooltip on hover */
   cursor: help;
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -1011,9 +985,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: CONTACT PAGE
----------------------------------------------------------------- */
+/* COMPONENT: CONTACT PAGE */
 .contact-section {
   padding: var(--section-gap) 0;
 }
@@ -1196,47 +1168,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   RESPONSIVE: CONTACT PAGE
----------------------------------------------------------------- */
+/* RESPONSIVE: CONTACT PAGE */
 @media (max-width: 767.98px) {
   .contact-form-card {
     padding: 1.5rem;
   }
 }
 
-
-/* ----------------------------------------------------------------
-   COMPONENT: PLACEHOLDER ("COMING SOON") PAGES
-   Used as a temporary stand-in for pages not yet built
-   (Gallery, Blog, FAQ, Reviews) so navigation never 404s
----------------------------------------------------------------- */
-.placeholder-section {
-  padding: 6rem 0;
-}
-.placeholder-icon {
-  font-size: 3rem;
-  color: var(--brand-accent);
-  margin-bottom: 1.5rem;
-  display: block;
-}
-.placeholder-title {
-  font-size: 1.8rem;
-  color: var(--text-dark);
-  margin-bottom: 0.75rem;
-}
-.placeholder-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  max-width: 460px;
-  margin: 0 auto 2rem;
-  line-height: 1.7;
-}
-
-
-/* ----------------------------------------------------------------
-   COMPONENT: GALLERY PAGE
----------------------------------------------------------------- */
+/* COMPONENT: GALLERY PAGE */
 .gallery-section {
   padding: var(--section-gap) 0;
 }
@@ -1316,9 +1255,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------------------------------------------------------
-   COMPONENT: BLOG LISTING PAGE
----------------------------------------------------------------- */
+/* COMPONENT: BLOG LISTING PAGE */
 .blog-section {
   padding: var(--section-gap) 0;
 }
@@ -1443,10 +1380,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.7rem; /* Arrow nudges further right on hover */
 }
 
-
-/* ----------------------------------------------------------------
-   COMPONENT: SINGLE ARTICLE PAGE (blog-post.html)
----------------------------------------------------------------- */
+/* COMPONENT: SINGLE ARTICLE PAGE (blog-post.html) */
 .article-section {
   padding: 3rem 0 5rem;
   max-width: 760px;
@@ -1480,4 +1414,163 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.35rem;
   color: var(--text-dark);
   margin: 2rem 0 1rem;
+}
+
+
+/* COMPONENT: FAQ PAGE (Bootstrap Accordion) */
+.faq-section {
+  padding: var(--section-gap) 0;
+}
+
+.faq-category-title {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin: 2.5rem 0 1rem;
+}
+.faq-category-title:first-child {
+  margin-top: 0;
+}
+
+/* Override Bootstrap's default accordion styling to match brand */
+.accordion-item {
+  border: 1px solid var(--border-colour);
+  border-radius: 10px !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.accordion-button {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background-color: var(--white);
+  padding: 1.1rem 1.4rem;
+}
+/* Remove Bootstrap's default blue focus ring, use brand colour instead */
+.accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(107, 63, 30, 0.12);
+  border-color: var(--brand-primary);
+}
+/* Style for when an accordion item is open */
+.accordion-button:not(.collapsed) {
+  background-color: var(--brand-light);
+  color: var(--brand-primary);
+}
+/* Flip the chevron icon colour when open, to match Bootstrap's default chevron behaviour */
+.accordion-button:not(.collapsed)::after {
+  filter: sepia(1) saturate(3) hue-rotate(-10deg);
+}
+.accordion-body {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  padding: 0 1.4rem 1.3rem;
+}
+.accordion-body a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+
+/* COMPONENT: TESTIMONIALS PAGE */
+
+/* Featured review carousel */
+.featured-review-section {
+  padding: 4rem 0 2rem;
+}
+#reviewCarousel {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.featured-review {
+  text-align: center;
+  padding: 1rem 4rem 3rem;
+}
+.featured-stars {
+  color: var(--brand-accent);
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.2rem;
+}
+.featured-quote {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+.featured-author {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Override Bootstrap carousel controls to use brand colour, sit closer in */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 6%;
+  opacity: 0.5;
+  filter: invert(1) grayscale(1);
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.9;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: var(--brand-primary);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.carousel-indicators .active {
+  opacity: 1;
+}
+
+/* Review grid section */
+.reviews-grid-section {
+  padding: 2rem 0 var(--section-gap);
+  background: var(--brand-light);
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border-colour);
+  border-radius: var(--card-radius);
+  padding: 1.75rem;
+  height: 100%;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(107, 63, 30, 0.1);
+}
+.review-stars {
+  color: var(--brand-accent);
+  font-size: 0.85rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.15rem;
+}
+.review-text {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.review-author {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+/* RESPONSIVE: FAQ + TESTIMONIALS */
+@media (max-width: 575.98px) {
+  .featured-review {
+    padding: 1rem 2.5rem 2.5rem;
+  }
+  .featured-quote {
+    font-size: 1.1rem;
+  }
 }
